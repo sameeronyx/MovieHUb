@@ -9,7 +9,7 @@ if (imdbID) {
 
 async function searchMovie(movieName) {
 
-    // this is free api no worry
+    // this is free api no worry friends
 
     let response = await fetch(`https://www.omdbapi.com/?apikey=7a2a8e0d&i=${movieName}&plot=full`);
     let data = await response.json();

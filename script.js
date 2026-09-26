@@ -72,7 +72,7 @@ movieSearch.addEventListener("submit", (e) => {
 })
 
 async function searchMovie(movieName) {
-    movieHub.innerHTML = "<p>searching Movie ....</p>"
+    movieHub.innerHTML = "<p class = text-yellow-600 font-sserif font-bold >Searching Movie....</p>"
     let response = await fetch(`https://www.omdbapi.com/?apikey=7a2a8e0d&s=${encodeURIComponent(movieName)}`);
     let data = await response.json();
     console.log(data);
@@ -83,7 +83,7 @@ async function searchMovie(movieName) {
     else {
         console.log(data.Error);
 
-        movieHub.innerHTML = `<p>${data.Error}</p>`
+        movieHub.innerHTML = `<p class = "text-red-400">${data.Error}</p>`
     }
 
 
