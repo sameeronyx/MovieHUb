@@ -1,86 +1,76 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="output.css">
 </head>
-<body>
-    <h1>Movie Details </h1>
-    <!-- {
-    "Title": "Spider-Man: No Way Home",
-    "Year": "2021",
-    "Rated": "PG-13",
-    "Released": "17 Dec 2021",
-    "Runtime": "148 min",
-    "Genre": "Action, Adventure, Fantasy",
-    "Director": "Jon Watts",
-    "Writer": "Chris McKenna, Erik Sommers, Stan Lee",
-    "Actors": "Tom Holland, Zendaya, Benedict Cumberbatch",
-    "Plot": "Peter Parker's secret identity is revealed to the entire world. Desperate for help, Peter turns to Doctor Strange to make the world forget that he is Spider-Man. The spell goes horribly wrong and shatters the multiverse, bringing in monstrous villains that could destroy the world.",
-    "Language": "English, Tagalog",
-    "Country": "United States",
-    "Awards": "Nominated for 1 Oscar. 35 wins & 72 nominations total",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BMmFiZGZjMmEtMTA0Ni00MzA2LTljMTYtZGI2MGJmZWYzZTQ2XkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg",
-    "Ratings": [
-        {
-            "Source": "Internet Movie Database",
-            "Value": "8.1/10"
-        },
-        {
-            "Source": "Rotten Tomatoes",
-            "Value": "93%"
-        },
-        {
-            "Source": "Metacritic",
-            "Value": "71/100"
-        }
-    ],
-    "Metascore": "71",
-    "imdbRating": "8.1",
-    "imdbVotes": "1,017,543",
-    "imdbID": "tt10872600",
-    "Type": "movie",
-    "DVD": "N/A",
-    "BoxOffice": "$814,866,759",
-    "Production": "N/A",
-    "Website": "N/A",
-    "Response": "True"
-} -->
-    <div id="movie-detail">
-        <!-- <div>
-            <img src="${data.Poster}" alt="">
+
+<body class="bg-black min-h-screen text-slate-100 antialiased selection:bg-yellow-600">
+
+    <header class="max-w-5xl mx-auto px-6 py-6 border-b border-white/10 flex items-center justify-between">
+        <a href="index.html" class="text-slate-400 text-sm font-serif hover:text-yellow-600 transition-colors">&larr;
+            Back to MovieHub</a>
+        <h1 class="font-serif text-xl font-semibold text-slate-100 capitalize">Movie Details</h1>
+    </header>
+
+    <div id="movie-detail" class="max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row gap-10">
+
+        <div class="shrink-0 mx-auto md:mx-0">
+            <div id="moviePoster"
+                class="w-56 md:w-64 aspect-2/3 rounded-sm border border-white/10 bg-white/5 bg-cover bg-center flex items-center justify-center text-slate-600 text-xs font-serif">
+                No Poster
+            </div>
         </div>
-        
-      
-            <h2>${data.Title}</h2>
-            <section>
-                <p>${data.Title}</p>
-                <p>${data.Released}</p>
-                <p>${data.imdbRating}</p>
-                <p>${data.Language}</p>
-                <p>${data.Runtime}</p>
-            </section>
+
+        <div class="flex-1 flex flex-col gap-8">
+
             <div>
-                <p>Plot Overview</p>
-                <p>${data.Plot}</p>
-                
+                <h2 id="movieTitle" class="font-serif text-3xl font-semibold text-slate-100 mb-2">&nbsp;</h2>
+                <section class="flex flex-wrap items-center gap-x-4 gap-y-1 text-slate-400 text-sm">
+                    <p id="movieReleased"></p>
+                    <p id="movieRuntime"></p>
+                    <p id="movieLanguage"></p>
+                    <p id="movieRating" class="text-yellow-600 font-semibold"></p>
+                </section>
+            </div>
+
+            <div>
+                <p class="font-serif text-yellow-600 mb-2">Plot Overview</p>
+                <p id="moviePlot" class="text-slate-300 leading-relaxed max-w-2xl"></p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 border-t border-white/10 pt-6">
+                <section>
+                    <p class="text-slate-500 text-xs uppercase tracking-wide mb-1">Director</p>
+                    <p id="movieDirector" class="text-slate-200 font-serif"></p>
+                </section>
+                <section>
+                    <p class="text-slate-500 text-xs uppercase tracking-wide mb-1">Writer</p>
+                    <p id="movieWriter" class="text-slate-200 font-serif"></p>
+                </section>
+
+                <section> <p class="text-slate-500 text-xs uppercase tracking-wide mb-1">Cast</p>
+                    <p id="movieCast" class="text-slate-200 font-serif"></p> </section>
+
+
+                <section class="mt-4">
+                    <button id="movieImdbBtn"
+                        class="text-sm font-serif text-black bg-yellow-600 hover:bg-yellow-500 transition-colors rounded-sm px-4 py-2 cursor-pointer">
+                        View on IMDb
+                    </button>
+                </section>
 
             </div>
-            <div>
-                <section>
-                    <p>Director</p>
-                    <p>4{Director}</p>
-                </section>
-                <section>
-                    <P>Writer</P>
-                    <p>>${data.Writer}</p>
-                </section>
-            </div>
-        </div> -->
+
+
+        </div>
 
     </div>
-
     <script src="moviedetails.js"></script>
 </body>
+
 </html>

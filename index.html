@@ -5,34 +5,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieHub</title>
+    <link rel="stylesheet" href="output.css">
 </head>
 
-<body>
-    <h1>MovieHub</h1>
+<body class="bg-black  selection:bg-yellow-600 min-h-screen  antialiased">
+    <header class="flex max-w-7xl  border  border-b-white/10  mx-6 justify-between items-center">
 
-    <form action="" id="movieForm">
-        <input type="text" placeholder="Serach Movie" id="MovieInput">
-        <button>search</button>
-        <div id="movieHub">
-            <!-- <div>
-                <img src="https://m.media-amazon.com/images/M/MV5BMTgzNzkxMzk5Nl5BMl5BanBnXkFtZTgwMTQ2MzA2MDE@._V1_SX300.jpg" alt="">
-            </div>
-            <div>
-                <p>Undefinied</p>
-                <p>year-2020</p>
-            </div> -->
-        </div>
-    </form>
-     <div id="movieHub">
-            <!-- <div>
-                <img src="https://m.media-amazon.com/images/M/MV5BMTgzNzkxMzk5Nl5BMl5BanBnXkFtZTgwMTQ2MzA2MDE@._V1_SX300.jpg" alt="">
-            </div>
-            <div>
-                <p>Undefinied</p>
-                <p>year-2020</p>
-            </div> -->
+        <div class="flex flex-2 px-3 py-4  items-center gap-1 font-serif">
+            <!-- SVG Icon -->
+            <svg class="w-7 h-7 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm0 2v3h2.5l1.5-3H4zm4.5 0l-1.5 3h3l1.5-3H8.5zm5 0l-1.5 3h3l1.5-3h-3zm5 0l-1.5 3H20V6h-1.5zM4 11v7h16v-7H4z" />
+            </svg>
+
+            <!-- Capitalized Logo Heading -->
+            <h1 class="capitalize text-xl tracking-wide gap-1 space-x-1">
+                <span class="font-semibold text-slate-100">Movie</span><span
+                    class="font-extrabold text-yellow-600">Hub</span>
+            </h1>
         </div>
 
+
+
+
+        <div class="flex items-center">
+            <button class="block md:hidden text-slate-300 hover:text-white focus:outline-none py-4 px-4"
+                aria-label="Toggle Menu" id="hamBurger">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+
+            <nav
+                class="hidden flex-col  md:flex-row gap-8 md:px-10 md:py-4  md:flex text-slate-300 font-bold font-serif  ">
+                <ul><a href="#home" class="hover:text-yellow-600 transition-colors"> Home </a></ul>
+                <ul><a href="#about" class="hover:text-yellow-600 transition-colors">About</a></ul>
+                <ul><a href="#movieHub" class="hover:text-yellow-600 transition-colors">Search</a></ul>
+                <ul><a href="#contact" class="hover:text-yellow-600 transition-colors">Contacts</a></ul>
+
+            </nav>
+        </div>
+
+    </header>
+
+
+    <nav id="nav-bar"
+        class=" z-10 hidden flex-col   md:hidden gap-8  py-5 px-6 md:px-10 md:py-4 text-slate-300 font-bold font-serif bg-yellow-600">
+        <ul><a href="#home" class="hover:text-yellow-600 transition-colors"> Home </a></ul>
+        <ul><a href="#about" class="hover:text-yellow-600 transition-colors">About</a></ul>
+        <ul><a href="#movieHub" class="hover:text-yellow-600 transition-colors">Search</a></ul>
+        <ul><a href="#contact" class="hover:text-yellow-600 transition-colors">Contacts</a></ul>
+
+    </nav>
+
+    <main>
+
+        <section id="home"
+            class="w-full h-80 flex flex-col items-center justify-center gap-4 text-center px-6 border-b border-white/10">
+            <div class="max-w-lg">
+                <h2 class="font-serif text-3xl md:text-4xl font-semibold text-slate-100 mb-3">Find your next movie</h2>
+                <p class="text-slate-400 text-sm md:text-base">Search thousands of titles and see what's worth watching
+                    tonight.</p>
+            </div>
+            <form action="" id="movieForm" class="flex w-full max-w-md gap-2">
+                <input type="text" placeholder="Serach Movie" id="MovieInput"
+                    class="flex-1 bg-transparent border border-white/20 rounded-sm px-4 py-2 text-slate-100 placeholder-slate-500 font-serif focus:outline-none focus:border-yellow-600 transition-colors">
+                <button
+                    class="px-5 py-2 bg-yellow-600 text-black font-bold rounded-sm font-serif hover:bg-yellow-500 transition-colors">search</button>
+
+            </form>
+        </section>
+
+
+        <section id="movies" class="max-w-7xl mx-auto px-6 py-16 border-b border-white/10">
+            <div id="movieHub"
+                class="max-w-7xl mx-auto px-6 py-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            </div>
+
+            <h2 class="font-serif text-2xl font-semibold text-slate-100 mb-8">Featured Movies</h2>
+            <div id="featuredGrid" class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- default movies get injected here -->
+            </div>
+            <!-- <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                
+                <div  id="featuredGrid"  class="border border-white/10 rounded-sm p-4 flex flex-col gap-3 hover:border-yellow-600 transition-colors">
+                    <div class="w-full aspect-2/3 bg-white/5 rounded-sm flex items-center justify-center text-slate-600 text-xs font-serif">No Poster</div>
+                    <div>
+                        <h3 class="font-serif text-slate-100 font-semibold">Inception</h3>
+                        <p class="text-slate-400 text-sm">Sci-Fi • 2010</p>
+                    </div>
+                </div>
+                <div class="border border-white/10 rounded-sm p-4 flex flex-col gap-3 hover:border-yellow-600 transition-colors">
+                    <div class="w-full aspect-2/3 bg-white/5 rounded-sm flex items-center justify-center text-slate-600 text-xs font-serif"><img src="${data.Poster}" alt=""></div>
+                    <div>
+                        <h3 class="font-serif text-slate-100 font-semibold">Interstellar</h3>
+                        <p class="text-slate-400 text-sm">Sci-Fi • 2014</p>
+                    </div>
+                </div>
+                <div class="border border-white/10 rounded-sm p-4 flex flex-col gap-3 hover:border-yellow-600 transition-colors">
+                    <div class="w-full aspect-2/3 bg-white/5 rounded-sm flex items-center justify-center text-slate-600 text-xs font-serif">No Poster</div>
+                    <div>
+                        <h3 class="font-serif text-slate-100 font-semibold">The Dark Knight</h3>
+                        <p class="text-slate-400 text-sm">Action • 2008</p>
+                    </div>
+                </div>
+                <div class="border border-white/10 rounded-sm p-4 flex flex-col gap-3 hover:border-yellow-600 transition-colors">
+                    <div class="w-full aspect-2/3 bg-white/5 rounded-sm flex items-center justify-center text-slate-600 text-xs font-serif">No Poster</div>
+                    <div>
+                        <h3 class="font-serif text-slate-100 font-semibold">Pulp Fiction</h3>
+                        <p class="text-slate-400 text-sm">Crime • 1994</p>
+                    </div>
+                </div>
+            </div> -->
+        </section>
+
+        <section id="about" class="max-w-7xl mx-auto px-6 py-16 border-b border-white/10">
+            <h2 class="font-serif text-2xl font-semibold text-slate-100 mb-4">About MovieHub</h2>
+            <p class="text-slate-400 max-w-2xl leading-relaxed">MovieHub is a simple place to search and browse movies —
+                quick results, clean layout, nothing extra to get in the way.</p>
+        </section>
+
+
+
+
+
+
+        <section id="contact" class="max-w-7xl mx-auto px-6 py-16 border-b border-white/10">
+            <h2 class="font-serif text-2xl font-semibold text-slate-100 mb-4">Contact</h2>
+            <p class="text-slate-400 max-w-2xl">Have a question or feedback? Reach out anytime.</p>
+            <a href="mailto:hello@moviehub.com"
+                class="inline-block mt-4 text-yellow-600 font-serif hover:text-yellow-500 transition-colors">hello@moviehub.com</a>
+        </section>
+
+        <footer class="max-w-7xl mx-auto px-6 py-8 text-center text-slate-500 text-sm font-serif">
+            © MovieHub — All rights reserved.
+        </footer>
+    </main>
+
+    
     <script src="script.js"></script>
 </body>
 
