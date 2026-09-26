@@ -19,7 +19,8 @@ window.addEventListener("DOMContentLoaded", loadFeaturedMovies);
 async function loadFeaturedMovies() {
     const results = await Promise.all(
         defaultMovies.map(title =>
-            fetch(`http://www.omdbapi.com/?apikey=7a2a8e0d&t=${encodeURIComponent(title)}`)
+            // this is free api no worry
+            fetch(`https://www.omdbapi.com/?apikey=7a2a8e0d&t=${encodeURIComponent(title)}`)
                 .then(res => res.json())
         )
     );
