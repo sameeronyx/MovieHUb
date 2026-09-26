@@ -51,26 +51,11 @@ featuredGrid.addEventListener("click", (e) => {
     const imdbID = movieCard.dataset.imdbID;
 
     window.location.href = `movie_details.html?id=${imdbID}`
-    // console.log(imdbID);
-
+   
 
 })
 
 
-// featuredGrid.addEventListener("click", (e) => {
-//       e.stopPropagation();
-//     // const movieCard = e.target.closest(".movieCard")
-//     //  if (!movieCard) return; 
-
-//     const imdbID = movieCard.dataset.imdbID;
-
-//     window.location.href = `movie_details.html?id=${imdbID}`
-//     console.log(imdbID);
-
-//     const movieCard = e.target.closest(".movieCard");
-//     if (!movieCard) return;
-//     window.location.href = `movie_details.html?id=${movieCard.dataset.imdbID}`;
- // });
 
 
 
@@ -118,17 +103,7 @@ function displayMovie(data) {
                 <p class="text-slate-400 text-sm">${movie.Year}</p>
             </div>`
 
-        // const div = document.createElement("div")
-        // div.dataset.imdbID = movie.imdbID
-        // div.setAttribute("class", "movieCard")
-        // div.innerHTML =
-        //     `<div>
-        //         <img src="${movie.Poster}" alt="">
-        //     </div>
-        //     <div>
-        //         <p>${movie.Title}</p>
-        //         <p>${movie.Year}</p>
-        //     </div>`
+      
 
         movieHub.append(div)
     });
@@ -142,7 +117,7 @@ movieHub.addEventListener("click", (e) => {
     const imdbID = movieCard.dataset.imdbID;
 
     window.location.href = `movie_details.html?id=${imdbID}`
-    // console.log(imdbID);
+   
 
 
 })

@@ -47,41 +47,6 @@ async function searchMovie(movieName) {
     window.open(`https://www.imdb.com/title/${data.imdbID}`, "_blank");
 });
 }
-
-    // movieDetails.innerHTML = `
-    //    <div>
-    //         <img src="${data.Poster}" alt="">
-    //     </div>
-        
-      
-    //         <h2>${data.Title}</h2>
-    //         <section>
-    //             <p>${data.Title}</p>
-    //             <p>${data.Released}</p>
-    //             <p>${data.imdbRating}</p>
-    //             <p>${data.Language}</p>
-    //             <p>${data.Runtime}</p>
-    //         </section>
-    //         <div>
-    //             <p>Plot Overview</p>
-    //             <p>${data.Plot}</p>
-                
-
-    //         </div>
-    //         <div>
-    //             <section>
-    //                 <p>Director</p>
-    //                 <p>${data.Director}</p>
-    //             </section>
-    //             <section>
-    //                 <P>Writer</P>
-    //                 <p>${data.Writer}</p>
-    //             </section>
-
-    //             <section> <button > View On imDB </button> <section>
-    //         </div>
-    //     </div>
-   
         
 
 
